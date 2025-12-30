@@ -20,3 +20,7 @@ user = {
     }
 
 Commented out all calls to authentication   
+
+_in nginx_
+
+Commented out auth and files upstream blocks and location blocks
