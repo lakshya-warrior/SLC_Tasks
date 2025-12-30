@@ -4,22 +4,21 @@ _docker-compose.yml_
 
 Had to change the gateway platform to run on macbook
 
-Commented out the auth service section.
+Commented out the auth service
 
-Commented out the files service section.
+Commented out the files service
 
-Commented out auth and files upstream blocks and location blocks
+_Authentication Bypass_
 
-Authentication Bypass
-
-in the mutation file added user
+in all the mutation files added user as given below (hardcoded bypass for the authentication)
 
 user = {
         "role": "cc", 
         "uid": "idk"
     }
 
-Commented out all calls to authentication   
+Commented out all calls to authentication and files (where ever it was checking for user in the data base
+like GetUser)
 
 _in nginx_
 
