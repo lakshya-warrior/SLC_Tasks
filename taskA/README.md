@@ -23,3 +23,9 @@ like GetUser)
 _in nginx_
 
 Commented out auth and files upstream blocks and location blocks
+
+_in web_
+
+Changed public: true (default) to public: null
+
+As it was not displating the events i made
