@@ -1,6 +1,13 @@
-## How to Run
-1. Navigate to the folder: `cd simplewebsite`
-2. Start the project: `docker-compose up -d`
-3. Access the site at: `http://localhost:8000`
+## Prerequisites
+- Docker Desktop
+- Git
 
-**Note:** The database will be automatically imported from `init.sql` on the first run.
+## Setup
+
+1. Clone the repo and go to the folder taskB
+2. Start the project: docker-compose up -d
+3. Access the site at: http://localhost:8002
+
+
+## NOTE
+Database: http://localhost:8080
