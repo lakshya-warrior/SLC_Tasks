@@ -1,2 +1,1 @@
-# TaskA
-GraphQL integration
+# SLC Tasks
