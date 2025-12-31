@@ -1,7 +1,6 @@
 services:
   db:
     image: mysql:8.0
-    container_name: iiit_clubs_db
     restart: unless-stopped
     volumes:
       - db_data:/var/lib/mysql
@@ -11,15 +10,12 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wp_user
       MYSQL_PASSWORD: wp_password
-    networks:
-      - wordpressnet
     command: '--default-authentication-plugin=mysql_native_password'
 
   wordpress:
     depends_on:
       - db
     image: wordpress:latest
-    container_name: iiit_clubs_wp
     ports:
       - "8002:80"
     restart: unless-stopped
@@ -27,31 +23,21 @@ services:
       - wordpress_data:/var/www/html
       - ./wp-content:/var/www/html/wp-content
     environment:
-      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: wp_user
       WORDPRESS_DB_PASSWORD: wp_password
       WORDPRESS_DB_NAME: wordpress
-    networks:
-      - wordpressnet
 
   phpmyadmin:
     image: phpmyadmin:latest
-    container_name: iiit_clubs_phpmyadmin
     restart: unless-stopped
     ports:
       - "8080:80"
     environment:
       PMA_HOST: db
-      PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: password
     depends_on:
       - db
-    networks:
-      - wordpressnet
-
-networks:
-  wordpressnet:
-    driver: bridge
 
 volumes:
   db_data:
