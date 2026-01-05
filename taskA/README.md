@@ -1,4 +1,10 @@
-**Changes**
+
+Uplaoded services folder with changes, can run webiste with clubs, member ...
+using
+
+docker-compose up -d
+
+**Changes I did**
 
 # _docker-compose.yml_
 
